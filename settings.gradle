@@ -1,4 +1,5 @@
 rootProject.name = 'chucknorris'
 
 include Modules.app,
-        Modules.category
+        Modules.category,
+        Modules.coreui
