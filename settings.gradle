@@ -1,2 +1,4 @@
-include ':app'
-rootProject.name='chucknorris'
+rootProject.name = 'chucknorris'
+
+include Modules.app,
+        Modules.category

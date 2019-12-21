@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 29
+
+    dataBinding.enabled = true
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation(AndroidLibs.appCompat)
+    implementation(AndroidLibs.constraintLayout)
+    implementation(AndroidLibs.ktxCore)
+
+    implementation(Libs.stdLibKotlinJdk)
+
+    testImplementation(TestLibs.junit)
+}
