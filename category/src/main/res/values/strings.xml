@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">category</string>
+    <string name="wellcome_title">Bem vindo ao mundo do Chuck Norris!</string>
+    <string name="wellcome_description">Escolha uma categoria para descobrir fatos sobre Chuck Norris</string>
 </resources>

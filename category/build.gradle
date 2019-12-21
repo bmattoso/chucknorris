@@ -1,1 +1,5 @@
 apply from: "$rootDir/androidmodule.gradle"
+
+dependencies {
+    implementation(AndroidLibs.recyclerView)
+}

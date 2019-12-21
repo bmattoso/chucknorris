@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.chucknorris.category" />
+<manifest package="br.com.chucknorris.category" />

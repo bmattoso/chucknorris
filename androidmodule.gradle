@@ -7,6 +7,9 @@ repositories {
 
 android {
     compileSdkVersion 29
+    defaultConfig {
+        minSdkVersion 16
+    }
 
     dataBinding.enabled = true
 
@@ -21,6 +24,8 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.coreui))
+
     implementation(AndroidLibs.appCompat)
     implementation(AndroidLibs.constraintLayout)
     implementation(AndroidLibs.ktxCore)
