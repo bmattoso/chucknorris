@@ -1,6 +1,7 @@
 package br.com.chucknorris.category.di
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import br.com.chucknorris.category.presentation.CategoryViewModel
 import br.com.chucknorris.coreui.viewmodel.ViewModelKey
 import dagger.Binds
@@ -13,5 +14,5 @@ abstract class CategoryModule {
     @Binds
     @IntoMap
     @ViewModelKey(CategoryViewModel::class)
-    abstract fun postListViewModel(viewModel: CategoryViewModel): ViewModel
+    abstract fun getCategoryViewModel(viewModel: CategoryViewModel): ViewModel
 }

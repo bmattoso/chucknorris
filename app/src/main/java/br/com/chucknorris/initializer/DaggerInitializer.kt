@@ -9,7 +9,7 @@ class DaggerInitializer : LibraryInitializer {
     override fun init(chuckNorrisApplication: ChuckNorrisApplication) {
         chuckNorrisApplication.coreComponent = DaggerCoreComponent
             .builder()
-            .contextModule(CoreModule(chuckNorrisApplication))
+            .coreModule(CoreModule(chuckNorrisApplication))
             .build()
     }
 }

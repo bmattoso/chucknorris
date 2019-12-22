@@ -3,6 +3,7 @@ apply from: "$rootDir/androidmodule.gradle"
 
 dependencies {
     implementation(AndroidLibs.recyclerView)
+    implementation(AndroidLibs.lifecycleExtension)
 
     kapt(AnnotationProcessor.dagger)
 }

@@ -39,6 +39,7 @@ dependencies {
     implementation AndroidLibs.appCompat
     implementation AndroidLibs.ktxCore
     implementation AndroidLibs.constraintLayout
+    implementation AndroidLibs.fragmentKtx
 
     kapt(AnnotationProcessor.dagger)
 
