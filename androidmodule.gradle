@@ -29,6 +29,7 @@ dependencies {
     implementation(AndroidLibs.appCompat)
     implementation(AndroidLibs.constraintLayout)
     implementation(AndroidLibs.ktxCore)
+    implementation(AndroidLibs.lifecycleExtension)
 
     implementation(Libs.stdLibKotlinJdk)
 
