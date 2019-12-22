@@ -2,12 +2,20 @@ package br.com.chucknorris.coreui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import br.com.chucknorris.coreui.di.scope.FragmentScope
 import javax.inject.Inject
 import javax.inject.Provider
 
+@FragmentScope
 class ViewModelFactory @Inject constructor(
-    private val viewModels: MutableMap<Class<out ViewModel>, Provider<ViewModel>>
+    private val viewModelProviders: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
 
-    override fun <T : ViewModel> create(modelClass: Class<T>): T = viewModels[modelClass]?.get() as T
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        val provider = viewModelProviders[modelClass]
+            ?: viewModelProviders.entries.first { modelClass.isAssignableFrom(it.key) }.value
+
+        return provider.get() as T
+    }
 }

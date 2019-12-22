@@ -23,6 +23,7 @@ android {
 
 dependencies {
     implementation(AndroidLibs.appCompat)
+    implementation(AndroidLibs.lifecycleExtension)
 
     implementation(Libs.stdLibKotlinJdk)
     api(Libs.dagger)

@@ -1,8 +1,8 @@
 package br.com.chucknorris.category.presentation
 
-import br.com.chucknorris.coreui.viewmodel.BaseViewModel
+import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
-class CategoryViewModel @Inject constructor() : BaseViewModel<CategoryModel>() {
+class CategoryViewModel @Inject constructor() : ViewModel() {
 
 }

@@ -9,6 +9,7 @@ object CategoryInjector {
 
         DaggerCategoryComponent.builder()
             .coreComponent(coreComponentProvider.coreComponent)
+            .categoryFragment(categoryFragment)
             .build()
             .inject(categoryFragment)
     }
