@@ -16,7 +16,7 @@ abstract class CategoryModule {
     @Binds
     @IntoMap
     @ViewModelKey(CategoryViewModel::class)
-    abstract fun postListViewModel(viewModel: CategoryViewModel): ViewModel
+    abstract fun getCategoryViewModel(viewModel: CategoryViewModel): ViewModel
 
     @Binds
     @FragmentScope

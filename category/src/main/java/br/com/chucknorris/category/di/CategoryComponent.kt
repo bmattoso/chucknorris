@@ -5,7 +5,6 @@ import br.com.chucknorris.coreui.di.CoreComponent
 import br.com.chucknorris.coreui.di.scope.FragmentScope
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Singleton
 
 @Component(
     modules = [CategoryModule::class],

@@ -63,7 +63,7 @@
             android:id="@+id/welcome_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
             android:text="@string/wellcome_description"
             android:textColor="@android:color/black"
             android:textSize="16sp"
