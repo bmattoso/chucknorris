@@ -1,4 +1,10 @@
 package br.com.chucknorris.repository.core
 
-interface BaseRepository {
+import br.com.chucknorris.core.NetworkAvailability
+import javax.inject.Inject
+
+abstract class BaseRepository {
+
+    @Inject
+    lateinit var networkAvailability: NetworkAvailability
 }
