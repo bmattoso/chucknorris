@@ -1,7 +1,7 @@
 package br.com.chucknorris.usecase.category
 
-import br.com.chucknorris.usecase.core.BaseUseCase
+import br.com.chucknorris.model.Category
 
-interface GetEventCategoryListUseCase : BaseUseCase<Boolean> {
-    suspend operator fun invoke(): Boolean
+interface GetEventCategoryListUseCase {
+    operator fun invoke(): List<Category>
 }

@@ -34,6 +34,7 @@ dependencies {
     implementation(Libs.okhttpLogginInterceptor)
     implementation(Libs.retrofit)
     implementation(Libs.retrofitConverterGson)
+    implementation(Libs.retrofitRxAdapter)
 
     kapt(AnnotationProcessor.dagger)
 

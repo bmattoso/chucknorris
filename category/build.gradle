@@ -2,6 +2,12 @@ apply plugin: 'kotlin-kapt'
 apply from: "$rootDir/androidmodule.gradle"
 
 dependencies {
+    implementation(project(Modules.core))
+    implementation(project(Modules.usecase))
+    implementation(project(Modules.service))
+    implementation(project(Modules.datasource))
+    implementation(project(Modules.repository))
+
     implementation(AndroidLibs.recyclerView)
     implementation(AndroidLibs.lifecycleExtension)
 
