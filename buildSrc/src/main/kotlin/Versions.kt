@@ -7,4 +7,5 @@ object Versions {
     const val retrofitRxAdapter = "2.4.0"
     const val rxandroid = "2.0.2"
     const val coil = "0.8.0"
+    const val ktlintPlugin = "9.0.0"
 }

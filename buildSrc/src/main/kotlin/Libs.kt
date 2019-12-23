@@ -9,4 +9,5 @@ object Libs {
     const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitRxAdapter}"
     const val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
     const val coil = "io.coil-kt:coil:${Versions.coil}"
+    const val ktlintPlugin = "org.jlleitschuh.gradle:ktlint-gradle:${Versions.ktlintPlugin}"
 }
