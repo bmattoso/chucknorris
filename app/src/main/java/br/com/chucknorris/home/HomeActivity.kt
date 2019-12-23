@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import br.com.chucknorris.R
+import br.com.chucknorris.coreui.navigation.BaseNavigation
 import br.com.chucknorris.coreui.navigation.FragmentNavigation
-import br.com.chucknorris.coreui.navigation.Navigation
 import br.com.chucknorris.home.di.HomeInjector
-import javax.inject.Inject
+import br.com.chucknorris.navigation.FragmentNavigationImpl
 
-class HomeActivity : AppCompatActivity(), Navigation {
+class HomeActivity : AppCompatActivity(), BaseNavigation {
 
-    @Inject
-    lateinit var fragmentNavigation: FragmentNavigation
+    override val fragmentNavigation: FragmentNavigation = FragmentNavigationImpl(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,10 +22,7 @@ class HomeActivity : AppCompatActivity(), Navigation {
     }
 
     private fun openInitialFragment() {
-        val categoryFragment = fragmentNavigation.getCategoryFragment()
-        categoryFragment?.let {
-            openFragment(categoryFragment)
-        }
+        fragmentNavigation.openCategoryFragment()
     }
 
     override fun openFragment(fragment: Fragment) {

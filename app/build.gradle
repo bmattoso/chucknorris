@@ -29,10 +29,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
     implementation(project(Modules.coreui))
+    implementation(project(Modules.navigation))
 
     implementation Libs.stdLibKotlinJdk
 

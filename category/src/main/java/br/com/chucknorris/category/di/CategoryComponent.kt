@@ -7,7 +7,10 @@ import dagger.BindsInstance
 import dagger.Component
 
 @Component(
-    modules = [CategoryModule::class],
+    modules = [
+        CategoryModule::class,
+        CategoryNavigationModule::class
+    ],
     dependencies = [CoreComponent::class]
 )
 @FragmentScope
@@ -17,6 +20,7 @@ interface CategoryComponent {
 
         @BindsInstance
         fun categoryFragment(categoryFragment: CategoryFragment): Builder
+
         fun coreComponent(component: CoreComponent): Builder
         fun build(): CategoryComponent
     }

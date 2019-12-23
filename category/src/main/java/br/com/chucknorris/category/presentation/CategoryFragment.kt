@@ -28,6 +28,8 @@ class CategoryFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        viewModel.loadCategories()
+
         return binding.root
     }
 

@@ -1,4 +1,4 @@
-package br.com.chucknorris.coreui.navigation
+package br.com.chucknorris.navigation
 
 object FragmentPath {
     object Category {
