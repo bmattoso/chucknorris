@@ -9,4 +9,5 @@ include Modules.app,
         Modules.usecase,
         Modules.datasource,
         Modules.service,
-        Modules.databinding
+        Modules.databinding,
+        Modules.joke

@@ -9,4 +9,5 @@ object Modules {
     const val datasource = ":datasource"
     const val service = ":service"
     const val databinding = ":databinding"
+    const val joke = ":joke"
 }
