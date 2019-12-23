@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 interface BaseNavigation {
     val fragmentNavigation: FragmentNavigation
 
-    fun openFragment(fragment: Fragment)
+    fun openFragment(
+        fragment: Fragment,
+        addToBackStack: Boolean = true
+    )
+
     fun openIntent(intent: Intent)
 }

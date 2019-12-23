@@ -14,7 +14,10 @@ class FragmentNavigationImpl @Inject constructor(
 
     override fun openCategoryFragment() {
         val fragment = CategoryFragment.newInstance()
-        baseNavigation.openFragment(fragment)
+        baseNavigation.openFragment(
+            fragment = fragment,
+            addToBackStack = false
+        )
     }
 
     override fun openRandomJokeFragment(category: String) {

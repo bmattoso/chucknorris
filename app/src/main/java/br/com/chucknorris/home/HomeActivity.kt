@@ -25,10 +25,15 @@ class HomeActivity : AppCompatActivity(), BaseNavigation {
         fragmentNavigation.openCategoryFragment()
     }
 
-    override fun openFragment(fragment: Fragment) {
+    override fun openFragment(
+        fragment: Fragment,
+        addToBackStack: Boolean
+    ) {
         supportFragmentManager.commit(allowStateLoss = true) {
             replace(R.id.containter, fragment, fragment.tag)
-            addToBackStack(fragment.tag)
+            if (addToBackStack) {
+                addToBackStack(fragment.tag)
+            }
         }
     }
 
@@ -37,7 +42,7 @@ class HomeActivity : AppCompatActivity(), BaseNavigation {
     }
 
     override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount == 1) {
+        if (supportFragmentManager.backStackEntryCount <= 1) {
             super.onBackPressed()
         } else {
             supportFragmentManager.popBackStack()
