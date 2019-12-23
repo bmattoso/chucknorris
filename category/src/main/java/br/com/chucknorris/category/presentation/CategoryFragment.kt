@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.chucknorris.category.R
 import br.com.chucknorris.category.databinding.FragmentCategoryBinding
 import br.com.chucknorris.coreui.fragment.BaseFragment
@@ -23,7 +25,11 @@ class CategoryFragment : BaseFragment() {
         binding.adapter = CategoryAdapter(viewModel)
         binding.model = viewModel.model
         binding.viewModel = viewModel
-        binding.categoryList.setHasFixedSize(true)
+        binding.categoryList.apply {
+            val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
+            addItemDecoration(dividerItemDecoration)
+            setHasFixedSize(true)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

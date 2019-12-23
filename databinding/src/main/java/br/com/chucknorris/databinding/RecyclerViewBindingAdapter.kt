@@ -11,6 +11,7 @@ fun RecyclerView.setListAdapter(adapter: ListAdapter<*, *>) {
 }
 
 @BindingAdapter("data")
+@Suppress("UNCHECKED_CAST")
 fun RecyclerView.setData(data: List<*>?) {
     if (adapter is ListAdapter<*, ViewHolder>) {
         (adapter as ListAdapter<Any, ViewHolder>).submitList(data)
