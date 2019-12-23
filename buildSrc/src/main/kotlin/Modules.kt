@@ -3,4 +3,5 @@ object Modules {
     const val category = ":category"
     const val coreui = ":coreui"
     const val navigation = ":navigation"
+    const val repository = ":repository"
 }

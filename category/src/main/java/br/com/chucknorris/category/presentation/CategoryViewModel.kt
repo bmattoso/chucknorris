@@ -5,6 +5,8 @@ import javax.inject.Inject
 
 class CategoryViewModel @Inject constructor() : BaseViewModel<CategoryModel>() {
 
+    override val model = CategoryModel()
+
     fun loadCategories() {
     }
 }

@@ -3,4 +3,5 @@ rootProject.name = 'chucknorris'
 include Modules.app,
         Modules.category,
         Modules.coreui,
-        Modules.navigation
+        Modules.navigation,
+        Modules.repository
