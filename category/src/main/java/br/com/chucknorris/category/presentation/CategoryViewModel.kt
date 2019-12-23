@@ -18,13 +18,13 @@ class CategoryViewModel @Inject constructor(
     fun loadCategories() {
         model.showLoading.postValue(true)
 
-        // addDisposable(
-        //     getEventCategoryListUseCase()
-        //         .observeOn(schedulerProvider.ui())
-        //         .doOnSuccess { result -> handleSuccessCategories(result) }
-        //         .doOnError { showError() }
-        //         .subscribe()
-        // )
+        addDisposable(
+            getEventCategoryListUseCase()
+                .observeOn(schedulerProvider.ui())
+                .doOnSuccess { result -> handleSuccessCategories(result) }
+                .doOnError { showError() }
+                .subscribe()
+        )
     }
 
     private fun handleSuccessCategories(result: Result<GetCategoriesAvailableFailure, List<Category>>?) {
