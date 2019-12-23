@@ -22,6 +22,7 @@ class CategoryFragment : BaseFragment() {
     private val binding by FragmentBinding<FragmentCategoryBinding>(this, R.layout.fragment_category) { binding ->
         binding.adapter = CategoryAdapter(viewModel)
         binding.model = viewModel.model
+        binding.viewModel = viewModel
         binding.categoryList.setHasFixedSize(true)
     }
 
