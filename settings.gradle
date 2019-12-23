@@ -6,4 +6,5 @@ include Modules.app,
         Modules.navigation,
         Modules.repository,
         Modules.core,
-        Modules.usecase
+        Modules.usecase,
+        Modules.datasource

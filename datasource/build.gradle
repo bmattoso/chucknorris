@@ -1,0 +1,11 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation(project(Modules.core))
+
+    implementation(Libs.stdLibKotlinJdk)
+}
+
+repositories {
+    mavenCentral()
+}

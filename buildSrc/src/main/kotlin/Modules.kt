@@ -6,4 +6,5 @@ object Modules {
     const val repository = ":repository"
     const val core = ":core"
     const val usecase = ":usecase"
+    const val datasource = ":datasource"
 }
