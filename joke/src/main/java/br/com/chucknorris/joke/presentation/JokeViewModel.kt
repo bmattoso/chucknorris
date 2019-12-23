@@ -1,5 +1,6 @@
 package br.com.chucknorris.joke.presentation
 
+import br.com.chucknorris.coreui.navigation.FragmentNavigation
 import br.com.chucknorris.coreui.scheduler.SchedulerProvider
 import br.com.chucknorris.coreui.viewmodel.BaseViewModel
 import br.com.chucknorris.joke.R
@@ -13,12 +14,14 @@ import javax.inject.Inject
 class JokeViewModel @Inject constructor(
     private val getJokeFromCategoryUseCase: GetJokeFromCategoryUseCase,
     private val schedulerProvider: SchedulerProvider,
-    private val jokeToJokeViewMapper: JokeToJokeViewMapper
+    private val jokeToJokeViewMapper: JokeToJokeViewMapper,
+    private val navigation: FragmentNavigation
 ) : BaseViewModel<JokeModel>() {
     override val model = JokeModel()
 
     fun loadJokeFromCategory(category: String) {
         showLoading()
+        model.categoryName.postValue(category)
 
         addDisposable(
             getJokeFromCategoryUseCase(category)
@@ -27,6 +30,10 @@ class JokeViewModel @Inject constructor(
                 .doOnError { showError(R.string.get_joke_category_error) }
                 .subscribe()
         )
+    }
+
+    fun openOfficialWebSite(url: String) {
+        navigation.openBrowserUrl(url)
     }
 
     private fun handleSuccessJoke(result: Result<GetJokeFromCategoryFailure, Joke>) {

@@ -1,3 +1,4 @@
 <resources>
+    <string name="try_again">Try again</string>
     <string name="conection_error">Aparentemente você está sem conexão :/</string>
 </resources>

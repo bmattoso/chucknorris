@@ -18,7 +18,7 @@ class JokeRemoteDataSourceImpl @Inject constructor(
 ) : JokeRemoteDataSource {
 
     override fun getJokeFromCategory(category: String): Single<Result<GetJokeFromCategoryFailure, Joke>> {
-        return jokeService.getRandomJokeFromCategory(category)
+        return jokeService.getRandomJokeFromCategory(category.toLowerCase())
             .subscribeOn(schedulerProvider.io())
             .map { response -> transformResponseIntoResult(response) }
     }

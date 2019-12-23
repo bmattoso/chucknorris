@@ -1,6 +1,5 @@
 <resources>
-    <string name="wellcome_title">Bem vindo ao mundo do Chuck Norris!</string>
-    <string name="wellcome_description">Escolha uma categoria para descobrir fatos sobre Chuck Norris</string>
-    <string name="try_again">Tentar novamente</string>
-    <string name="get_category_error">Tivemos um problema ao carregar a lista. Já estamos de olho no que pode ter acontecido!</string>
+    <string name="wellcome_title">Welcome to Chuck Norris\'s World!</string>
+    <string name="wellcome_description">Choose any category below to find a new Chuck Norris fact.</string>
+    <string name="get_category_error">Oh no! We had a problem to fetch the categories. Just calm down, we\'re looking at what\'s happening.</string>
 </resources>

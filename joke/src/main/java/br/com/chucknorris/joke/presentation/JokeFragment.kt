@@ -23,7 +23,8 @@ class JokeFragment : BaseFragment() {
         ViewModelProviders.of(this, viewModelFactory)[JokeViewModel::class.java]
     }
     private val binding by FragmentBinding<FragmentJokeBinding>(this, R.layout.fragment_joke) { binding ->
-
+        binding.model = viewModel.model
+        binding.viewModel = viewModel
     }
     private val selectedCategory: String by lazy { arguments?.getString(BUNDLE_CATEGORY_KEY) ?: "" }
 

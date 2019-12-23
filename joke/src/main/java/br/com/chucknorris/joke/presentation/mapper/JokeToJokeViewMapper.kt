@@ -10,7 +10,7 @@ class JokeToJokeViewMapper @Inject constructor() : Mapper<Joke, JokeView> {
 
     override fun map(from: Joke): JokeView {
         return JokeView(
-            from.date.parseString(),
+            "Created at ${from.date.parseString()}",
             from.image,
             from.description,
             from.url

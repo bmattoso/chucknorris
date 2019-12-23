@@ -6,4 +6,5 @@ object Versions {
     const val okhttp = "4.2.2"
     const val retrofitRxAdapter = "2.4.0"
     const val rxandroid = "2.0.2"
+    const val coil = "0.8.0"
 }

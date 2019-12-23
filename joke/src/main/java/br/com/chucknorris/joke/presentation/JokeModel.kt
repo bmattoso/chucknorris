@@ -9,4 +9,5 @@ class JokeModel {
     val errorMessage = MutableLiveData<Int>()
 
     val joke = MutableLiveData<JokeView>()
+    val categoryName = MutableLiveData<String>()
 }

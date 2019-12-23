@@ -1,7 +1,9 @@
 package br.com.chucknorris.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import br.com.chucknorris.R
@@ -26,6 +28,19 @@ class HomeActivity : AppCompatActivity(), BaseNavigation {
     override fun openFragment(fragment: Fragment) {
         supportFragmentManager.commit(allowStateLoss = true) {
             replace(R.id.containter, fragment, fragment.tag)
+            addToBackStack(fragment.tag)
+        }
+    }
+
+    override fun openIntent(intent: Intent) {
+        startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount == 1) {
+            super.onBackPressed()
+        } else {
+            supportFragmentManager.popBackStack()
         }
     }
 }

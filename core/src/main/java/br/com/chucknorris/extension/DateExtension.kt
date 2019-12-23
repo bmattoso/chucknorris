@@ -6,7 +6,7 @@ import java.util.Locale
 
 val brazilianLocale = Locale("pt", "BR")
 
-private const val DATE_DEFAULT_UI_PATTERN = "yyyy-MM-dd hh:mm"
+private const val DATE_DEFAULT_UI_PATTERN = "MM/dd/yyyy"
 private val defaultUiPattern = SimpleDateFormat(DATE_DEFAULT_UI_PATTERN, brazilianLocale)
 
 private const val DATE_DEFAULT_PATTERN = "yyyy-MM-dd hh:mm:ss.SSSSSS"
