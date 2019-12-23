@@ -16,18 +16,21 @@ class CategoryViewModel @Inject constructor(
     override val model = CategoryModel()
 
     fun loadCategories() {
-        getEventCategoryListUseCase()
-            .observeOn(schedulerProvider.ui())
-            .doOnSuccess { result ->
-                handleSuccessCategories(result)
-            }.doOnError {
-                showError()
-            }.subscribe()
+        model.showLoading.postValue(true)
+
+        // addDisposable(
+        //     getEventCategoryListUseCase()
+        //         .observeOn(schedulerProvider.ui())
+        //         .doOnSuccess { result -> handleSuccessCategories(result) }
+        //         .doOnError { showError() }
+        //         .subscribe()
+        // )
     }
 
     private fun handleSuccessCategories(result: Result<GetCategoriesAvailableFailure, List<Category>>?) {
         if (result is Result.Success) {
             model.categories.postValue(result.data)
+            hideLoading()
         } else {
             showError()
         }
@@ -35,5 +38,10 @@ class CategoryViewModel @Inject constructor(
 
     private fun showError() {
         model.showError.postValue(true)
+        hideLoading()
+    }
+
+    private fun hideLoading() {
+        model.showLoading.postValue(false)
     }
 }

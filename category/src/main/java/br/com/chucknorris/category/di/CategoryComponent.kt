@@ -9,6 +9,7 @@ import dagger.Component
 @Component(
     modules = [
         CategoryModule::class,
+        CategoryDomainModule::class,
         CategoryNavigationModule::class
     ],
     dependencies = [CoreComponent::class]

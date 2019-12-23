@@ -1,6 +1,10 @@
 package br.com.chucknorris.coreui.di.network
 
+import android.content.Context
+import android.net.ConnectivityManager
+import br.com.chucknorris.core.NetworkAvailability
 import br.com.chucknorris.coreui.BuildConfig
+import br.com.chucknorris.coreui.network.NetworkAvailabilityImpl
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -15,6 +19,15 @@ private const val ENDPOINT_URL = "https://api.chucknorris.io/"
 
 @Module
 class NetworkModule {
+
+    @Singleton
+    @Provides
+    fun networkAvailability(networkAvailability: NetworkAvailabilityImpl): NetworkAvailability = networkAvailability
+
+    @Singleton
+    @Provides
+    fun provideConnectivityManager(context: Context) =
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     @Provides
     fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient =

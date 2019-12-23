@@ -1,8 +1,11 @@
 package br.com.chucknorris.coreui.di
 
 import android.content.Context
+import br.com.chucknorris.core.NetworkAvailability
 import br.com.chucknorris.coreui.di.network.NetworkModule
+import br.com.chucknorris.coreui.scheduler.SchedulerProvider
 import dagger.Component
+import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Singleton
@@ -14,4 +17,7 @@ import javax.inject.Singleton
 )
 interface CoreComponent {
     fun context(): Context
+    fun schedulerProvider(): SchedulerProvider
+    fun networkAvailability(): NetworkAvailability
+    fun retrofit(): Retrofit
 }

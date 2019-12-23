@@ -7,7 +7,6 @@ import androidx.fragment.app.commit
 import br.com.chucknorris.R
 import br.com.chucknorris.coreui.navigation.BaseNavigation
 import br.com.chucknorris.coreui.navigation.FragmentNavigation
-import br.com.chucknorris.home.di.HomeInjector
 import br.com.chucknorris.navigation.FragmentNavigationImpl
 
 class HomeActivity : AppCompatActivity(), BaseNavigation {
@@ -16,7 +15,6 @@ class HomeActivity : AppCompatActivity(), BaseNavigation {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        HomeInjector.inject(this)
         setContentView(R.layout.activity_main)
         openInitialFragment()
     }

@@ -8,7 +8,7 @@ repositories {
 android {
     compileSdkVersion 29
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
     }
 
     dataBinding.enabled = true

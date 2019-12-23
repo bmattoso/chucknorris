@@ -5,25 +5,30 @@ import br.com.chucknorris.category.domain.repository.CategoryRepositoryImpl
 import br.com.chucknorris.category.domain.usecase.GetEventCategoryListUseCaseImpl
 import br.com.chucknorris.datasource.category.CategoryRemoteDataSource
 import br.com.chucknorris.repository.category.CategoryRepository
+import br.com.chucknorris.service.category.CategoryService
 import br.com.chucknorris.usecase.category.GetEventCategoryListUseCase
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import retrofit2.Retrofit
 
 @Module
-abstract class CategoryDomainModule {
+class CategoryDomainModule {
 
-    @Binds
-    abstract fun bindGetEventCategoryListUseCase(
+    @Provides
+    fun bindGetEventCategoryListUseCase(
         getEventCategoryListUseCase: GetEventCategoryListUseCaseImpl
-    ): GetEventCategoryListUseCase
+    ): GetEventCategoryListUseCase = getEventCategoryListUseCase
 
-    @Binds
-    abstract fun bindCategoryRepository(
+    @Provides
+    fun bindCategoryRepository(
         categoryRepository: CategoryRepositoryImpl
-    ): CategoryRepository
+    ): CategoryRepository = categoryRepository
 
-    @Binds
-    abstract fun bindCategoryRemoteDataSource(
+    @Provides
+    fun bindCategoryRemoteDataSource(
         categoryRemoteDataSource: CategoryRemoteDataSourceImpl
-    ): CategoryRemoteDataSource
+    ): CategoryRemoteDataSource = categoryRemoteDataSource
+
+    @Provides
+    fun providesCategoryService(retrofit: Retrofit) = retrofit.create(CategoryService::class.java)
 }
