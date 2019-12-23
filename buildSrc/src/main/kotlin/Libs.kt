@@ -1,5 +1,5 @@
 object Libs {
-    const val stdLibKotlinJdk: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.stdLibKotlinJdk}"
+    const val stdLibKotlinJdk: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val gson = "com.google.code.gson:gson:${Versions.gson}"

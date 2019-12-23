@@ -33,7 +33,7 @@ class CategoryRemoteDataSourceImpl @Inject constructor(
 
     private fun createCategoryList(categoriesResponse: List<String>?) = mutableListOf<Category>().apply {
         categoriesResponse?.forEachIndexed { index, categoryResponse ->
-            add(createCategory(index, categoryResponse))
+            add(createCategory(index + 1, categoryResponse))
         }
     }
 

@@ -29,6 +29,7 @@ dependencies {
 
     implementation(AndroidLibs.appCompat)
     implementation(AndroidLibs.lifecycleExtension)
+    implementation(AndroidLibs.constraintLayout)
 
     api(Libs.dagger)
     implementation(Libs.stdLibKotlinJdk)

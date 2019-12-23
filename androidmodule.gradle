@@ -34,4 +34,6 @@ dependencies {
     implementation(Libs.stdLibKotlinJdk)
 
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.junitExt)
+    testImplementation(TestLibs.kotlinTest)
 }

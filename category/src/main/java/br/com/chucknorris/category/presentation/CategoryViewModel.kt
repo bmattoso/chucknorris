@@ -19,7 +19,10 @@ class CategoryViewModel @Inject constructor(
     override val model = CategoryModel()
 
     override fun onCategoryClick(id: String) {
-        navigation.openCategoryFragment()
+        val selectedCategory = model.categories.value?.firstOrNull { category -> category.id == id }
+        selectedCategory?.let {
+            navigation.openRandomJokeFragment(selectedCategory.name)
+        }
     }
 
     fun loadCategories() {
@@ -29,7 +32,7 @@ class CategoryViewModel @Inject constructor(
             getEventCategoryListUseCase()
                 .observeOn(schedulerProvider.ui())
                 .doOnSuccess { result -> handleSuccessCategories(result) }
-                .doOnError { showError(R.string.server_error) }
+                .doOnError { showError(R.string.get_category_error) }
                 .subscribe()
         )
     }
@@ -66,7 +69,7 @@ class CategoryViewModel @Inject constructor(
 
     private fun getErrorMessage(error: GetCategoriesAvailableFailure): Int {
         return when (error) {
-            GetCategoriesAvailableFailure.Server -> R.string.server_error
+            GetCategoriesAvailableFailure.Server -> R.string.get_category_error
             GetCategoriesAvailableFailure.Connection -> R.string.conection_error
         }
     }

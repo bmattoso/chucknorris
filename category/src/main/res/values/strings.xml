@@ -2,6 +2,5 @@
     <string name="wellcome_title">Bem vindo ao mundo do Chuck Norris!</string>
     <string name="wellcome_description">Escolha uma categoria para descobrir fatos sobre Chuck Norris</string>
     <string name="try_again">Tentar novamente</string>
-    <string name="conection_error">Aparentemente você está sem conexão :/</string>
-    <string name="server_error">Tivemos um problema ao carregar a lista. Já estamos de olho no que pode ter acontecido!</string>
+    <string name="get_category_error">Tivemos um problema ao carregar a lista. Já estamos de olho no que pode ter acontecido!</string>
 </resources>

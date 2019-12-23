@@ -1,2 +1,3 @@
 <resources>
+    <string name="conection_error">Aparentemente você está sem conexão :/</string>
 </resources>

@@ -99,7 +99,7 @@
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/welcome_description"
             app:present="@{model.showError}"
-            tools:text="@string/server_error" />
+            tools:text="@string/get_category_error" />
 
         <TextView
             android:id="@+id/try_again"
