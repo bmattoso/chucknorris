@@ -5,6 +5,7 @@ dependencies {
 
     implementation(Libs.stdLibKotlinJdk)
     implementation(Libs.dagger)
+    implementation(Libs.rxandroid)
 }
 
 repositories {

@@ -5,6 +5,7 @@ dependencies {
 
     implementation(Libs.stdLibKotlinJdk)
     implementation(Libs.retrofit)
+    implementation(Libs.rxandroid)
 }
 
 repositories {

@@ -4,6 +4,6 @@ object Versions {
     const val retrofit = "2.6.2"
     const val gson = "2.8.6"
     const val okhttp = "4.2.2"
-    const val retrofitRxAdapter = "1.0.0"
+    const val retrofitRxAdapter = "2.4.0"
     const val rxandroid = "2.0.2"
 }

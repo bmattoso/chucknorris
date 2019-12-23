@@ -35,6 +35,7 @@ dependencies {
     implementation(Libs.retrofit)
     implementation(Libs.retrofitConverterGson)
     implementation(Libs.retrofitRxAdapter)
+    implementation(Libs.rxandroid)
 
     kapt(AnnotationProcessor.dagger)
 

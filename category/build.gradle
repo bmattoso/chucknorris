@@ -11,5 +11,7 @@ dependencies {
     implementation(AndroidLibs.recyclerView)
     implementation(AndroidLibs.lifecycleExtension)
 
+    implementation(Libs.retrofitRxAdapter)
+
     kapt(AnnotationProcessor.dagger)
 }

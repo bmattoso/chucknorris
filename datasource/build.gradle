@@ -4,6 +4,7 @@ dependencies {
     implementation(project(Modules.core))
 
     implementation(Libs.stdLibKotlinJdk)
+    implementation(Libs.rxandroid)
 }
 
 repositories {

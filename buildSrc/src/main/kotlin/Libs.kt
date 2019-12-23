@@ -6,6 +6,6 @@ object Libs {
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     const val okhttpLogginInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
     const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
-    const val retrofitRxAdapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${Versions.retrofitRxAdapter}"
+    const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitRxAdapter}"
     const val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
 }
