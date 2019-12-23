@@ -5,8 +5,8 @@ import br.com.chucknorris.core.NetworkAvailability
 import br.com.chucknorris.coreui.di.network.NetworkModule
 import br.com.chucknorris.coreui.scheduler.SchedulerProvider
 import dagger.Component
-import retrofit2.Retrofit
 import javax.inject.Singleton
+import retrofit2.Retrofit
 
 @Singleton
 @Component(

@@ -9,15 +9,12 @@ import br.com.chucknorris.coreui.network.UnsafeOkHttpClient
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.security.KeyStore
-import javax.inject.Singleton
-import javax.net.ssl.SSLContext
-import javax.net.ssl.TrustManagerFactory
 
 private const val ENDPOINT_URL = "https://api.chucknorris.io/"
 

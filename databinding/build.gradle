@@ -1,5 +1,5 @@
-apply plugin: 'kotlin-kapt'
 apply from: "$rootDir/androidmodule.gradle"
+apply plugin: 'kotlin-kapt'
 
 dependencies {
     implementation(project(Modules.coreui))

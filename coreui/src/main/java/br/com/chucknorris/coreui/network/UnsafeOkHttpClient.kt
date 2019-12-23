@@ -1,11 +1,11 @@
 package br.com.chucknorris.coreui.network
 
-import okhttp3.OkHttpClient
 import java.security.cert.X509Certificate
 import javax.net.ssl.HostnameVerifier
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
+import okhttp3.OkHttpClient
 
 object UnsafeOkHttpClient {
 

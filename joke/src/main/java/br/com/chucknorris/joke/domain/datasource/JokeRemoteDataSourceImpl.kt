@@ -8,8 +8,8 @@ import br.com.chucknorris.result.joke.GetJokeFromCategoryFailure
 import br.com.chucknorris.service.joke.JokeResponse
 import br.com.chucknorris.service.joke.JokeService
 import io.reactivex.Single
-import retrofit2.Response
 import javax.inject.Inject
+import retrofit2.Response
 
 class JokeRemoteDataSourceImpl @Inject constructor(
     private val jokeService: JokeService,

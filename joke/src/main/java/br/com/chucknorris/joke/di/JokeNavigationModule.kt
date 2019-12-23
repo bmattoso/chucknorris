@@ -6,7 +6,6 @@ import br.com.chucknorris.joke.presentation.JokeFragment
 import dagger.Module
 import dagger.Provides
 
-
 @Module
 class JokeNavigationModule {
 

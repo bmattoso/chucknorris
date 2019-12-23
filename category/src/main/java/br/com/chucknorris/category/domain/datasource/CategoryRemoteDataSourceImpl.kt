@@ -7,8 +7,8 @@ import br.com.chucknorris.result.Result
 import br.com.chucknorris.result.category.GetCategoriesAvailableFailure
 import br.com.chucknorris.service.category.CategoryService
 import io.reactivex.Single
-import retrofit2.Response
 import javax.inject.Inject
+import retrofit2.Response
 
 class CategoryRemoteDataSourceImpl @Inject constructor(
     private val categoryService: CategoryService,
