@@ -27,8 +27,13 @@ dependencies {
     implementation(AndroidLibs.appCompat)
     implementation(AndroidLibs.lifecycleExtension)
 
-    implementation(Libs.stdLibKotlinJdk)
     api(Libs.dagger)
+    implementation(Libs.stdLibKotlinJdk)
+    implementation(Libs.gson)
+    implementation(Libs.okhttp)
+    implementation(Libs.okhttpLogginInterceptor)
+    implementation(Libs.retrofit)
+    implementation(Libs.retrofitConverterGson)
 
     kapt(AnnotationProcessor.dagger)
 
