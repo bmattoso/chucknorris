@@ -7,4 +7,5 @@ include Modules.app,
         Modules.repository,
         Modules.core,
         Modules.usecase,
-        Modules.datasource
+        Modules.datasource,
+        Modules.service

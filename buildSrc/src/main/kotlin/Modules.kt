@@ -7,4 +7,5 @@ object Modules {
     const val core = ":core"
     const val usecase = ":usecase"
     const val datasource = ":datasource"
+    const val service = ":service"
 }
