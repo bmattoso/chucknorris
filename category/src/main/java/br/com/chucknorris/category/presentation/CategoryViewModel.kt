@@ -1,5 +1,7 @@
 package br.com.chucknorris.category.presentation
 
+import br.com.chucknorris.category.R
+import br.com.chucknorris.coreui.navigation.FragmentNavigation
 import br.com.chucknorris.coreui.scheduler.SchedulerProvider
 import br.com.chucknorris.coreui.viewmodel.BaseViewModel
 import br.com.chucknorris.model.Category
@@ -10,38 +12,67 @@ import javax.inject.Inject
 
 class CategoryViewModel @Inject constructor(
     private val getEventCategoryListUseCase: GetEventCategoryListUseCase,
-    private val schedulerProvider: SchedulerProvider
-) : BaseViewModel<CategoryModel>() {
+    private val schedulerProvider: SchedulerProvider,
+    private val navigation: FragmentNavigation
+) : BaseViewModel<CategoryModel>(), CategoryListener {
 
     override val model = CategoryModel()
 
+    override fun onCategoryClick(id: String) {
+        navigation.openCategoryFragment()
+    }
+
     fun loadCategories() {
-        model.showLoading.postValue(true)
+        showLoading()
 
         addDisposable(
             getEventCategoryListUseCase()
                 .observeOn(schedulerProvider.ui())
                 .doOnSuccess { result -> handleSuccessCategories(result) }
-                .doOnError { showError() }
+                .doOnError { showError(R.string.server_error) }
                 .subscribe()
         )
     }
 
     private fun handleSuccessCategories(result: Result<GetCategoriesAvailableFailure, List<Category>>?) {
         if (result is Result.Success) {
-            model.categories.postValue(result.data)
-            hideLoading()
-        } else {
-            showError()
+            val categories = result.data.map { category -> transformCategoryIntoCategoryView(category) }
+            showCategories(categories)
+        } else if (result is Result.Error) {
+            val errorMessage = getErrorMessage(result.error)
+            showError(errorMessage)
         }
     }
 
-    private fun showError() {
-        model.showError.postValue(true)
-        hideLoading()
-    }
-
-    private fun hideLoading() {
+    private fun showCategories(categories: List<CategoryView>) {
+        model.categories.postValue(categories)
+        model.showCategories.postValue(true)
+        model.showError.postValue(false)
         model.showLoading.postValue(false)
     }
+
+    private fun showError(message: Int) {
+        model.errorMessage.postValue(message)
+        model.showCategories.postValue(false)
+        model.showError.postValue(true)
+        model.showLoading.postValue(false)
+    }
+
+    private fun showLoading() {
+        model.showCategories.postValue(false)
+        model.showError.postValue(false)
+        model.showLoading.postValue(true)
+    }
+
+    private fun getErrorMessage(error: GetCategoriesAvailableFailure): Int {
+        return when (error) {
+            GetCategoriesAvailableFailure.Server -> R.string.server_error
+            GetCategoriesAvailableFailure.Connection -> R.string.conection_error
+        }
+    }
+
+    private fun transformCategoryIntoCategoryView(category: Category) = CategoryView(
+        category.id.toString(),
+        category.name.capitalize()
+    )
 }

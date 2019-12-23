@@ -1,7 +1,8 @@
+apply plugin: 'kotlin-kapt'
 apply from: "$rootDir/androidmodule.gradle"
 
 dependencies {
-    implementation(project(Modules.core))
     implementation(project(Modules.coreui))
-    implementation(project(Modules.category))
+
+    implementation(AndroidLibs.recyclerView)
 }

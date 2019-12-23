@@ -19,7 +19,11 @@ class CategoryFragment : BaseFragment() {
     private val viewModel by lazy {
         ViewModelProviders.of(this, viewModelFactory)[CategoryViewModel::class.java]
     }
-    private val binding by FragmentBinding<FragmentCategoryBinding>(this, R.layout.fragment_category)
+    private val binding by FragmentBinding<FragmentCategoryBinding>(this, R.layout.fragment_category) { binding ->
+        binding.adapter = CategoryAdapter(viewModel)
+        binding.model = viewModel.model
+        binding.categoryList.setHasFixedSize(true)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

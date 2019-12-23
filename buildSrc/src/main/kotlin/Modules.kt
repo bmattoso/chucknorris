@@ -8,4 +8,5 @@ object Modules {
     const val usecase = ":usecase"
     const val datasource = ":datasource"
     const val service = ":service"
+    const val databinding = ":databinding"
 }

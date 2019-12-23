@@ -7,6 +7,7 @@ dependencies {
     implementation(project(Modules.service))
     implementation(project(Modules.datasource))
     implementation(project(Modules.repository))
+    implementation(project(Modules.databinding))
 
     implementation(AndroidLibs.recyclerView)
     implementation(AndroidLibs.lifecycleExtension)

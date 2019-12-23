@@ -3,6 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="model"
+            type="br.com.chucknorris.category.presentation.CategoryModel" />
+
+        <variable
+            name="adapter"
+            type="br.com.chucknorris.category.presentation.CategoryAdapter" />
+
+        <variable
+            name="viewModel"
+            type="br.com.chucknorris.category.presentation.CategoryViewModel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +60,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_small"
-            android:layout_marginLeft="@dimen/spacing_small"
             android:text="@string/wellcome_title"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -78,10 +93,39 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/spacing_small"
+            app:adapter="@{adapter}"
+            app:data="@{model.categories}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcome_description"
             tools:itemCount="10"
             tools:listitem="@layout/view_holder_category" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{model.errorMessage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/welcome_description"
+            app:present="@{model.showError}"
+            tools:text="@string/server_error" />
+
+        <TextView
+            android:id="@+id/try_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:onClick="@{() -> viewModel.loadCategories()}"
+            android:text="@string/try_again"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_message"
+            app:present="@{model.showError}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

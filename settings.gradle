@@ -8,4 +8,5 @@ include Modules.app,
         Modules.core,
         Modules.usecase,
         Modules.datasource,
-        Modules.service
+        Modules.service,
+        Modules.databinding
