@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface CategoryService {
 
     @GET("jokes/categories")
-    fun getAvailableCategories(): Single<Response<List<CategoryResponse>>>
+    fun getAvailableCategories(): Single<Response<List<String>>>
 }

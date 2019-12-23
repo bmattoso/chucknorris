@@ -5,7 +5,6 @@ import br.com.chucknorris.datasource.category.CategoryRemoteDataSource
 import br.com.chucknorris.model.Category
 import br.com.chucknorris.result.Result
 import br.com.chucknorris.result.category.GetCategoriesAvailableFailure
-import br.com.chucknorris.service.category.CategoryResponse
 import br.com.chucknorris.service.category.CategoryService
 import io.reactivex.Single
 import retrofit2.Response
@@ -23,7 +22,7 @@ class CategoryRemoteDataSourceImpl @Inject constructor(
     }
 
     private fun transformResponseIntoResult(
-        response: Response<List<CategoryResponse>>
+        response: Response<List<String>>
     ) = if (response.isSuccessful) {
         Result.Success(
             createCategoryList(response.body())
@@ -32,14 +31,14 @@ class CategoryRemoteDataSourceImpl @Inject constructor(
         Result.Error(GetCategoriesAvailableFailure.Server)
     }
 
-    private fun createCategoryList(categoriesResponse: List<CategoryResponse>?) = mutableListOf<Category>().apply {
+    private fun createCategoryList(categoriesResponse: List<String>?) = mutableListOf<Category>().apply {
         categoriesResponse?.forEachIndexed { index, categoryResponse ->
             add(createCategory(index, categoryResponse))
         }
     }
 
-    private fun createCategory(id: Int, categoryResponse: CategoryResponse) = Category(
+    private fun createCategory(id: Int, categoryName: String) = Category(
         id = id.toLong(),
-        name = categoryResponse.name
+        name = categoryName
     )
 }

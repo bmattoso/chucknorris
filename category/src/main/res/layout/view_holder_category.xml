@@ -3,6 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:toos="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="model"
+            type="br.com.chucknorris.category.presentation.CategoryView" />
+
+        <variable
+            name="listener"
+            type="br.com.chucknorris.category.presentation.CategoryListener" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
