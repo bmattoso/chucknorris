@@ -5,4 +5,5 @@ object Modules {
     const val navigation = ":navigation"
     const val repository = ":repository"
     const val core = ":core"
+    const val usecase = ":usecase"
 }
